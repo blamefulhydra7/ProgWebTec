@@ -11,8 +11,10 @@ header{
 
 header nav{
     background-color: #026dc6;
+    border-radius: 5px;
     padding: 1px 0px;
-    margin: 0px 1px;
+    margin: 0px auto;
+    width: 99%;
 }
 
 header nav ul li{
@@ -28,6 +30,55 @@ header nav form{
     margin-right: 20px;
 }
 
+header nav form input{
+    border-radius: 5px;
+}
+
+header nav form input[type="submit"]{
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
 #logo{
     margin-top: -150px;
+}
+
+#seccion01 article img{
+    width: 98%;
+    border: 5px solid lightgray;
+}
+
+#seccion01 article{
+    text-align: center;
+}
+
+#seccion01{
+    margin-top: 15px;
+}
+
+#seccion02 article{
+    width: 32.8%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#seccion02 article input[type="submit"]{
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 130px;
+}
+
+.unaSeccion{
+    font-size: 4.5em;
+}
+
+.otraSeccion{
+    font-size: 2.5em;
+}
+
+.negrita{
+    font-weight: bold;
 }
