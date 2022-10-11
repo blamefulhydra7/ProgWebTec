@@ -26,6 +26,12 @@ header nav ul li{
     padding-bottom: 4px;
 }
 
+#bgoffer{
+    left: -35px;
+    position: relative;
+    top: -406px;
+}
+
 #granthams{
     margin-top: 25px;
     margin-left: 25px;
@@ -37,7 +43,7 @@ header nav ul li{
 
 #seccion01{
     margin-top: 60px;
-    height: 318px;
+    height: 318px;;
 }
 
 #seccion01 article{
@@ -55,12 +61,68 @@ header nav ul li{
     width: 30%;
 }
 
+#secc01art02 ul{
+    list-style: none;
+    margin-left: -40px;
+}
+
+#secc01art02 ul li::before{
+    color: #ff0099;
+    content: "* ";
+}
+
+#seccion02{
+    margin-bottom: 20px;
+}
+
+#seccion02 article {
+    margin-right: 165px;
+    text-align: right;
+}
+
+#seccion03 article{
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+}
+
+#seccion03 article img{
+    vertical-align: middle;
+}
+
+#secc03art04{
+    margin-top: 40px;
+}
+
+#secc03art04 input{
+    margin-top: 15px;
+}
+
+#secc03art04 input[type="submit"]{
+    background-color: #8bc500;
+    color: white;
+    border: 1px solid #8bc500;
+    border-radius: 5px;
+}
+
 .color-rosa{
     color: #ff0099;
 }
 
+.color-verde{
+    color: #8bc500;
+}
+
+.color-azul{
+    color: #4267b3;
+}
+
 .letra-grande{
     font-size: 3.5em;
+}
+
+.letra-mediana{
+    font-size: 2em;
 }
 
 .negrita{
