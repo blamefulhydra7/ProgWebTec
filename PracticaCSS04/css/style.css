@@ -1,0 +1,27 @@
+body{
+    background-color: #245d92;
+    margin: 0px auto;
+    max-width: 1024px;
+}
+
+header > img{
+    display: block;
+    margin: 7px auto;
+    width: 20%;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+}
+
+.bg-gris{
+    background-color: #efefef;
+}
+
+.letra-gris{
+    color: #919191;
+}
