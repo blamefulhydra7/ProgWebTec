@@ -1,7 +1,12 @@
 body{
     background-color: #245d92;
+    font-size: 16px;
     margin: 0px auto;
     max-width: 1024px;
+}
+
+header{
+    margin: 0px 2px;
 }
 
 header > img{
@@ -10,12 +15,132 @@ header > img{
     width: 20%;
 }
 
-header ul{
-    list-style: none;
+header nav{
+    display: flex;
+    justify-content: end;
 }
 
-header ul li{
+header nav ul{
+    list-style: none;
+    margin-right: 30px;
+}
+
+header nav ul li img{
+    width: 100%;
+}
+
+main{
+    margin: 0px 2px;
+}
+
+#content{
+    background-color: white;
     display: inline-block;
+    padding: 20px;
+    width: 65%;
+}
+
+#cubes > span{
+    display: block;
+}
+
+#cubo01{
+    background-color: #19a820;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    width: 22%;
+}
+
+#cubo02{
+    background-color: #245d92;
+    display: inline-block;
+    text-align: center;
+    width: 22%;
+}
+
+#cubo03{
+    background-color: #7f1aa7;
+    display: inline-block;
+    text-align: center;
+    width: 22%;
+}
+
+#cubo04{
+    background-color: #a71a19;
+    display: inline-block;
+    text-align: center;
+    width: 22%;
+}
+
+#links{
+    background-color: #1e4972;
+    color: white;
+    margin-bottom: 25px;
+}
+
+#links img{
+    width: 100%;
+}
+
+#links ul{
+    list-style: none;
+    margin: 0px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+}
+
+#links ul li{
+    margin-bottom: 7px;
+}
+
+#noti{
+    display: inline-block;
+    width: 100px;
+}
+
+#mess{
+    display: inline-block;
+    width: 80px;
+}
+
+#progress{
+    background-color: white;
+}
+
+#progress > div{
+    background-color: #245d92;
+    color: white;
+    padding: 3px 0px;
+    margin-bottom: 5px;
+}
+
+#progress > div img{
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: middle;
+    width: 10%;
+}
+
+#progress > img{
+    margin-bottom: 7px;
+    max-width: 100%;
+}
+
+#progress > span{
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+#sett{
+    display: inline-block;
+    width: 70px;
+}
+
+#sidebar{
+    display: inline-block;
+    margin: 0px 15px;
+    width: 23%;
 }
 
 .bg-gris{
@@ -24,4 +149,8 @@ header ul li{
 
 .letra-gris{
     color: #919191;
+}
+
+.letra-blanca{
+    color: white;
 }
