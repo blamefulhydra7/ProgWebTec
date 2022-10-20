@@ -31,46 +31,115 @@ header nav ul li img{
 
 main{
     margin: 0px 2px;
+    vertical-align: top;
 }
 
 #content{
     background-color: white;
     display: inline-block;
     padding: 20px;
-    width: 65%;
+    width: 69%;
 }
 
 #cubes > span{
     display: block;
+    margin-left: 5px;
+    margin-bottom: 8px;
 }
 
 #cubo01{
     background-color: #19a820;
+    border-radius: 5px;
     display: inline-block;
-    padding: 20px;
+    margin-right: 5px;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
-    width: 22%;
+    vertical-align: top;
+    max-width: 22%;
+}
+
+#cubo01 img{
+    display: block;
+    margin: 0px auto;
+    max-width: 40%;
+}
+
+#cubo01 span{
+    max-height: fit-content;
+    overflow: hidden;
 }
 
 #cubo02{
-    background-color: #245d92;
+    background-color: #1b6da9;
+    border-radius: 5px;
     display: inline-block;
+    margin-right: 5px;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
-    width: 22%;
+    vertical-align: top;
+    max-width: 22%;
+}
+
+#cubo02 img{
+    display: block;
+    margin: 0px auto;
+    max-width: 40%;
+}
+
+#cubo02 span{
+    max-height: fit-content;
+    overflow: hidden;
 }
 
 #cubo03{
     background-color: #7f1aa7;
+    border-radius: 5px;
     display: inline-block;
+    margin-right: 5px;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
-    width: 22%;
+    vertical-align: top;
+    max-width: 20%;
+}
+
+#cubo03 img{
+    display: block;
+    margin: 0px auto;
+    max-width: 40%;
+}
+
+#cubo03 span{
+    max-height: fit-content;
+    overflow: hidden;
 }
 
 #cubo04{
     background-color: #a71a19;
+    border-radius: 5px;
     display: inline-block;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
-    width: 22%;
+    vertical-align: top;
+    max-width: 20%;
+}
+
+#cubo04 img{
+    display: block;
+    margin: 0px auto;
+    max-width: 40%;
+}
+
+#cubo04 span{
+    max-height: fit-content;
+    overflow: hidden;
 }
 
 #links{
@@ -102,6 +171,18 @@ main{
 #mess{
     display: inline-block;
     width: 80px;
+}
+
+#panels{
+    margin: 10px 0px;
+}
+
+#panels > span{
+    margin-bottom: 10px;
+}
+
+#panels article img{
+    width: 100%;
 }
 
 #progress{
@@ -140,7 +221,48 @@ main{
 #sidebar{
     display: inline-block;
     margin: 0px 15px;
+    vertical-align: top;
     width: 23%;
+}
+
+#users > span{
+    display: block;
+    margin: 5px 0px;
+}
+
+#users article{
+    background-color: #4a6aae;
+    display: inline-block;
+    height: 160px;
+    text-align: center;
+    padding: 8px 10px;
+    vertical-align: top;
+    width: 21%;
+}
+
+#users article img{
+    display: block;
+    margin: 0px auto;
+    width: 70%;
+}
+
+#users article span{
+    display: block;
+    margin: 4px 0px;
+}
+
+#users article input{
+    background-color: #5ac0de;
+    border: 1px solid #5ac0de;
+    border-radius: 2px;
+    color: white;
+    display: block;
+    padding: 5px 10px;
+    margin: 4px auto;
+}
+
+#user1 img{
+    width: 75% !important;
 }
 
 .bg-gris{
@@ -153,4 +275,12 @@ main{
 
 .letra-blanca{
     color: white;
+}
+
+.letra-pequeña{
+    font-size: 0.8em;
+}
+
+.letra-grande{
+    font-size: 1.3em;
 }
