@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User VueJS</title>
+    <style>
+        img{
+            border-radius: 100px;
+            vertical-align: middle;
+        }
+        #personasRandom{
+            background-color: gray;
+            border-radius: 5px;
+            box-shadow: 8px 8px 8px black;
+            color: white;
+            display: inline-block;
+            margin: 15px;
+            padding: 15px;
+            width: 300px;
+        }
+        #personasRandom:hover{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click.prevent="cambiarMuestra()">
+            Cambiar variable muestra
+        </button>
+        <div v-if="muestra">
+            {{mensaje}}
+        </div>
+        <br>
+        <input type="number" v-model="cantidad">
+        <br>
+        <button @click.prevent="randomUser()">
+            Random User
+        </button>
+        {{nombre}}
+        <p></p>
+        <div v-for="persona in personas" id="personasRandom">
+            <img :src="persona.picture.medium" alt="">
+            {{persona.name.first}} {{persona.name.last}}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
