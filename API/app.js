@@ -1,18 +1,28 @@
-let express = require('express');
-let mysql = require('mysql');
-let app = express();
-let cors = require('cors');
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+const cors = require('cors');
 app.use(express.json());
 
-let puerto = 3000;
+const puerto = 3000;
 
 app.listen(puerto, () => {
     console.log('Servicio iniciado');
 });
 
-let conexion = mysql.createConnection({
+const conexion = mysql.createConnection({
     host: 'localhost',
+    user: 'pw',
+    password: '',
+    database: 'pw',
 });
+
+conexion.connect((error) => {
+    if (error)
+        throw error;
+    else
+        console.log('Conectado a la BD');
+})
 
 app.get('/api/articulos', function (req, res) {
     conexion.query('SELECT * FROM Articulos', [], function (error, results) {
