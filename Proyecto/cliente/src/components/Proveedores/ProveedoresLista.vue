@@ -70,9 +70,23 @@ export default {
         },
         eliminarProveedor: async function (id) {
             try {
-                await axios.delete(URL_API + `/proveedores/${id}`);
-                Swal.fire('Proveedor eliminado', '¡Eliminaste un proveedor! :o', 'success');
-                this.getProveedores();
+                const result = await Swal.fire({
+                    title: '¿Seguro de borrar el proveedor?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí',
+                    denyButtonText: 'No',
+                });
+
+                if(result.isConfirmed)
+                {
+                    await axios.delete(URL_API + `/proveedores/${id}`);
+                    Swal.fire('Proveedor eliminado', '¡Eliminaste un proveedor! :o', 'success');
+                    this.getProveedores();
+                }
+                else{
+                    Swal.fire('Cancelado', 'Tu proveedor sigue vivo :D', 'info');
+                }
             } catch (error) {
                 Swal.fire('Error', 'No pude eliminarlo TnT', 'error');
             }

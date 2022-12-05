@@ -19,7 +19,8 @@
                     <td>{{ articulo.precio }}</td>
                     <td>{{ articulo.cantidad }}</td>
                     <td>
-                        <button @click.prevent="editarArticulo(articulo.id)" class="btn btn-primary me-4">Editar</button>
+                        <button @click.prevent="editarArticulo(articulo.id)"
+                            class="btn btn-primary me-4">Editar</button>
                         <button @click.prevent="eliminarArticulo(articulo.id)" class="btn btn-danger">Eliminar</button>
                     </td>
                 </tr>
@@ -66,9 +67,21 @@ export default {
         },
         eliminarArticulo: async function (id) {
             try {
-                await axios.delete(URL_API + `/articulos/${id}`);
-                Swal.fire('Artículo eliminado', '¡Eliminaste un artículo! :o', 'success');
-                this.getArticulos();
+                const result = await Swal.fire({
+                    title: '¿Seguro de borrar el artículo?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí',
+                    denyButtonText: 'No',
+                });
+
+                if (result.isConfirmed) {
+                    await axios.delete(URL_API + `/articulos/${id}`);
+                    Swal.fire('Artículo eliminado', '¡Eliminaste un artículo! :o', 'success');
+                    this.getArticulos();
+                } else if (result.isDenied) {
+                    Swal.fire('Cancelado', 'Tu artículo sigue vivo :D', 'info')
+                }
             } catch (error) {
                 Swal.fire('Error', 'No pude eliminarlo TnT', 'error');
             }

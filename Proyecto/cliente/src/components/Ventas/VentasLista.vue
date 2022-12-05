@@ -64,9 +64,22 @@ export default {
         },
         eliminarVenta: async function (id) {
             try {
-                await axios.delete(URL_API + `/ventas/${id}`);
-                Swal.fire('Venta eliminada', '¡Eliminaste una venta! :o', 'success');
-                this.getVentas();
+                const result = await Swal.fire({
+                    title: '¿Seguro de borrar la venta?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí',
+                    denyButtonText: 'No',
+                });
+
+                if(result.isConfirmed){
+                    await axios.delete(URL_API + `/ventas/${id}`);
+                    Swal.fire('Venta eliminada', '¡Eliminaste una venta! :o', 'success');
+                    this.getVentas();
+                }
+                else{
+                    Swal.fire('Cancelado', 'Tu venta sigue viva :D', 'info');
+                }
             } catch (error) {
                 Swal.fire('Error', 'No pude eliminarla TnT', 'error');
             }

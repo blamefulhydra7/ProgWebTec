@@ -67,9 +67,22 @@ export default {
         },
         eliminarCliente: async function (id) {
             try {
-                await axios.delete(URL_API + `/clientes/${id}`);
-                Swal.fire('Cliente eliminado', '¡Eliminaste un cliente! :o', 'success');
-                this.getClientes();
+                const result = await Swal.fire({
+                    title: '¿Seguro de borrar el cliente?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí',
+                    denyButtonText: 'No',
+                });
+
+                if (result.isConfirmed) {
+                    await axios.delete(URL_API + `/clientes/${id}`);
+                    Swal.fire('Cliente eliminado', '¡Eliminaste un cliente! :o', 'success');
+                    this.getClientes();
+                }
+                else {
+                    Swal.fire('Cancelado', 'Tu cliente sigue vivo :D', 'info');
+                }
             } catch (error) {
                 Swal.fire('Error', 'No pude eliminarlo TnT', 'error');
             }
