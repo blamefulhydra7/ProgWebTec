@@ -1,6 +1,9 @@
 <template>
     <div class="ProveedorEditar text-start">
         <form @submit.prevent="actualizar(id)">
+            <fieldset>
+                <legend>Editar cliente</legend>
+            </fieldset>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" v-model="cliente.nombre">

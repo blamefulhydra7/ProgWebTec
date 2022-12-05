@@ -1,27 +1,30 @@
 <template>
     <div class="ProveedorEditar text-start">
         <form @submit.prevent="actualizar(id)">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" v-model="proveedor.nombre">
-            </div>
-            <div class="mb-3">
-                <label for="rfc" class="form-label">RFC:</label>
-                <input type="text" maxlength="13" minlength="13" class="form-control" id="rfc" v-model="proveedor.rfc">
-            </div>
-            <div class="mb-3">
-                <label for="direccion" class="form-label">Dirección:</label>
-                <input type="text" class="form-control" id="direccion" v-model="proveedor.direccion">
-            </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="text" class="form-control" id="telefono" v-model="proveedor.telefono">
-            </div>
-            <div class="mb-3">
-                <label for="observaciones" class="form-label">Observaciones:</label>
-                <input type="text" class="form-control" id="observaciones" v-model="proveedor.observaciones">
-            </div>
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <fieldset>
+                <legend>Editar proveedor</legend>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" v-model="proveedor.nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="rfc" class="form-label">RFC:</label>
+                    <input type="text" maxlength="13" minlength="13" class="form-control" id="rfc" v-model="proveedor.rfc">
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" v-model="proveedor.direccion">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="number" :maxlength="10" :minlength="10" class="form-control" id="telefono" v-model="proveedor.telefono">
+                </div>
+                <div class="mb-3">
+                    <label for="observaciones" class="form-label">Observaciones:</label>
+                    <input type="text" class="form-control" id="observaciones" v-model="proveedor.observaciones">
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </fieldset>
         </form>
     </div>
 </template>

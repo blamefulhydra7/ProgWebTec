@@ -1,12 +1,15 @@
 <template>
     <div class="ProveedorDetalle">
-        <b-icon-caret-right-fill/> No. {{ cliente.id }}
-        <br>  
-        <b-icon-caret-right-fill/> Nombre: {{ cliente.nombre }}
-        <br>
-        <b-icon-caret-right-fill/> Dirección: {{ cliente.direccion }}
-        <br>
-        <b-icon-caret-right-fill/> RFC: {{ cliente.rfc }}
+        <fieldset>
+            <legend>Detalle del cliente</legend>
+            <b-icon-caret-right-fill/> No. {{ cliente.id }}
+            <br>  
+            <b-icon-caret-right-fill/> Nombre: {{ cliente.nombre }}
+            <br>
+            <b-icon-caret-right-fill/> Dirección: {{ cliente.direccion }}
+            <br>
+            <b-icon-caret-right-fill/> RFC: {{ cliente.rfc }}
+        </fieldset>
     </div>
 </template>
 

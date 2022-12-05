@@ -1,16 +1,19 @@
 <template>
     <div class="ProveedorDetalle">
-        <b-icon-caret-right-fill/> No. {{ proveedor.id }}
-        <br>  
-        <b-icon-caret-right-fill/> Nombre: {{ proveedor.nombre }}
-        <br>
-        <b-icon-caret-right-fill/> RFC: {{ proveedor.rfc }}
-        <br>
-        <b-icon-caret-right-fill/> Dirección: {{ proveedor.direccion }}
-        <br>
-        <b-icon-caret-right-fill/> Teléfono: {{ proveedor.telefono }}
-        <br>
-        <b-icon-caret-right-fill/> Observaciones: {{ proveedor.observaciones }}
+        <fieldset>
+            <legend>Detalle de proveedor</legend>
+            <b-icon-caret-right-fill/> No. {{ proveedor.id }}
+            <br>  
+            <b-icon-caret-right-fill/> Nombre: {{ proveedor.nombre }}
+            <br>
+            <b-icon-caret-right-fill/> RFC: {{ proveedor.rfc }}
+            <br>
+            <b-icon-caret-right-fill/> Dirección: {{ proveedor.direccion }}
+            <br>
+            <b-icon-caret-right-fill/> Teléfono: {{ proveedor.telefono }}
+            <br>
+            <b-icon-caret-right-fill/> Observaciones: {{ proveedor.observaciones }}
+        </fieldset>
     </div>
 </template>
 

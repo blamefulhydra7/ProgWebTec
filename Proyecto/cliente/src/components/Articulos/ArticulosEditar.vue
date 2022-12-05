@@ -1,22 +1,25 @@
 <template>
     <div class="ArticuloEditar text-start">
         <form @submit.prevent="actualizar(id)">
-            <label for="descripcion">Descripción: </label>
-            <input type="text" v-model="articulo.descripcion" id="descripcion" class="form-control">
-            <br>
-            <label for="precio">Precio: </label>
-            <input type="text" v-model="articulo.precio" id="precio" class="form-control">
-            <br>
-            <label for="cantidad">Cantidad: </label>
-            <input type="text" v-model="articulo.cantidad" id="cantidad" class="form-control">
-            <br>
-            <select class="form-select" aria-label="Proveedores">
-                <option v-for="proveedor in proveedores" :value="proveedor.id"
-                    :selected="(proveedor.id === articulo.proveedorid)" :key="proveedor.id">{{ proveedor.nombre }}
-                </option>
-            </select>
-            <br>
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <fieldset>
+                <legend>Editar artículo</legend>
+                <label for="descripcion">Descripción: </label>
+                <input type="text" v-model="articulo.descripcion" id="descripcion" class="form-control">
+                <br>
+                <label for="precio">Precio: </label>
+                <input type="number" v-model="articulo.precio" id="precio" class="form-control">
+                <br>
+                <label for="cantidad">Cantidad: </label>
+                <input type="number" v-model="articulo.cantidad" id="cantidad" class="form-control">
+                <br>
+                <select class="form-select" aria-label="Proveedores">
+                    <option v-for="proveedor in proveedores" :value="proveedor.id"
+                        :selected="(proveedor.id === articulo.proveedorid)" :key="proveedor.id">{{ proveedor.nombre }}
+                    </option>
+                </select>
+                <br>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </fieldset>
         </form>
     </div>
 </template>

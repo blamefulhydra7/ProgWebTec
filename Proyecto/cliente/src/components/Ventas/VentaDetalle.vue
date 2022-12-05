@@ -1,14 +1,17 @@
 <template>
     <div class="VentaDetalle">
-        <b-icon-caret-right-fill/> No. {{ venta.id }}
-        <br>  
-        <b-icon-caret-right-fill/> Articulo: {{ venta.descripcion }}
-        <br>
-        <b-icon-caret-right-fill/> Precio: {{ venta.precio }}
-        <br>
-        <b-icon-caret-right-fill/> Cantidad: {{ venta.cantidad }}
-        <br>
-        <b-icon-caret-right-fill/> Cliente: {{ venta.nombre }}
+        <fieldset>
+            <legend>Detalle de venta</legend>
+            <b-icon-caret-right-fill/> No. {{ venta.id }}
+            <br>  
+            <b-icon-caret-right-fill/> Articulo: {{ venta.descripcion }}
+            <br>
+            <b-icon-caret-right-fill/> Precio: {{ venta.precio }}
+            <br>
+            <b-icon-caret-right-fill/> Cantidad: {{ venta.cantidad }}
+            <br>
+            <b-icon-caret-right-fill/> Cliente: {{ venta.nombre }}
+        </fieldset>
     </div>
 </template>
 

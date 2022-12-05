@@ -1,6 +1,9 @@
 <template>
     <div class="ProveedorNuevo text-start">
         <form @submit.prevent="guardar()">
+            <fieldset>
+                <legend>Nuevo cliente</legend>
+            </fieldset>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" v-model="cliente.nombre" required>
@@ -13,7 +16,7 @@
                 <label for="rfc" class="form-label">RFC:</label>
                 <input type="text" maxlength="13" minlength="13" class="form-control" id="rfc" v-model="cliente.rfc" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
 </template>

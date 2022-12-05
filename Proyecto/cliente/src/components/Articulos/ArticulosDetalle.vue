@@ -1,14 +1,17 @@
 <template>
     <div class="Detalle">
-        <b-icon-caret-right-fill/> No. {{ this.articulo.id }}
-        <br>  
-        <b-icon-caret-right-fill/> Descripción: {{ this.articulo.descripcion }}
-        <br>
-        <b-icon-caret-right-fill/> Precio: {{ this.articulo.precio }}
-        <br>
-        <b-icon-caret-right-fill/> Cantidad: {{ this.articulo.cantidad }}
-        <br>
-        <b-icon-caret-right-fill/> Proveedor: {{ this.articulo.nombreProveedor }}
+        <fieldset>
+            <legend>Detalle del artículo</legend>
+            <b-icon-caret-right-fill/> No. {{ this.articulo.id }}
+            <br>  
+            <b-icon-caret-right-fill/> Descripción: {{ this.articulo.descripcion }}
+            <br>
+            <b-icon-caret-right-fill/> Precio: {{ this.articulo.precio }}
+            <br>
+            <b-icon-caret-right-fill/> Cantidad: {{ this.articulo.cantidad }}
+            <br>
+            <b-icon-caret-right-fill/> Proveedor: {{ this.articulo.nombreProveedor }}
+        </fieldset>
     </div>
 </template>
 

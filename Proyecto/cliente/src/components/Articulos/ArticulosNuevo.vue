@@ -1,26 +1,29 @@
 <template>
     <div class="ArticulosNuevo text-start">
         <form @submit.prevent="guardar()">
-            <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción:</label>
-                <input type="text" class="form-control" id="descripcion" v-model="articulo.descripcion" required>
-                <div class="form-text">Describe el producto que vendes.</div>
-            </div>
-            <div class="mb-3">
-                <label for="precio" class="form-label">Precio:</label>
-                <input type="number" class="form-control" id="precio" v-model="articulo.precio" required>
-            </div>
-            <div class="mb-3">
-                <label for="cantidad" class="form-label">Cantidad:</label>
-                <input type="number" class="form-control" id="cantidad" v-model="articulo.cantidad" required>
-            </div>
-            <select class="form-select mb-3" aria-label="Proveedores" v-model="articulo.proveedorid">
-                <option selected value="0">Selecciona un proveedor</option>
-                <option v-for="proveedor in proveedores" :value="proveedor.id" :key="proveedor.id">
-                    {{ proveedor.nombre }}
-                </option>
-            </select>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <fieldset>
+                <legend>Nuevo artículo</legend>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                    <input type="text" class="form-control" id="descripcion" v-model="articulo.descripcion" required>
+                    <div class="form-text">Describe el producto que vendes.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio:</label>
+                    <input type="number" class="form-control" id="precio" v-model="articulo.precio" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad" class="form-label">Cantidad:</label>
+                    <input type="number" class="form-control" id="cantidad" v-model="articulo.cantidad" required>
+                </div>
+                <select class="form-select mb-3" aria-label="Proveedores" v-model="articulo.proveedorid">
+                    <option selected value="0">Selecciona un proveedor</option>
+                    <option v-for="proveedor in proveedores" :value="proveedor.id" :key="proveedor.id">
+                        {{ proveedor.nombre }}
+                    </option>
+                </select>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </fieldset>
         </form>
     </div>
 </template>
