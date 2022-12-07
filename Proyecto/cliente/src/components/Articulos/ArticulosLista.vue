@@ -84,6 +84,7 @@ export default {
                 }
             } catch (error) {
                 Swal.fire('Error', 'No pude eliminarlo TnT', 'error');
+                console.log(error);
             }
         },
         nuevoArticulo: function () {

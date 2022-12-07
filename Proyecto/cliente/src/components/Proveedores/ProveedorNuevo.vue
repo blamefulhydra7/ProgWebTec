@@ -5,23 +5,23 @@
                 <legend>Nuevo proveedor</legend>
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" v-model="proveedor.nombre" required>
+                    <input type="text" class="form-control" placeholder="El nombre del proveedor..." id="nombre" v-model="proveedor.nombre" required>
                 </div>
                 <div class="mb-3">
                     <label for="rfc" class="form-label">RFC:</label>
-                    <input type="text" maxlength="13" minlength="13" class="form-control" id="rfc" v-model="proveedor.rfc" required>
+                    <input type="text" maxlength="13" minlength="13" placeholder="RFC del proveedor..." class="form-control" id="rfc" v-model="proveedor.rfc" required>
                 </div>
                 <div class="mb-3">
                     <label for="direccion" class="form-label">Dirección:</label>
-                    <input type="text" class="form-control" id="direccion" v-model="proveedor.direccion" required>
+                    <input type="text" class="form-control" id="direccion" placeholder="Dirección del proveedor..." v-model="proveedor.direccion" required>
                 </div>
                 <div class="mb-3">
                     <label for="telefono" class="form-label">Teléfono:</label>
-                    <input type="number" minlength="10" maxlength="10" class="form-control" id="telefono" v-model="proveedor.telefono" required>
+                    <input type="tel" pattern="[0-9]{10}" placeholder="0000000000" class="form-control" id="telefono" v-model="proveedor.telefono" required>
                 </div>
                 <div class="mb-3">
                     <label for="observaciones" class="form-label">Observaciones:</label>
-                    <input type="text" class="form-control" id="observaciones" v-model="proveedor.observaciones" required>
+                    <input type="text" placeholder="Observaciones al proveedor..." class="form-control" id="observaciones" v-model="proveedor.observaciones" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </fieldset>
