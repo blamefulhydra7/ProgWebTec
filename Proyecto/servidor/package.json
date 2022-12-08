@@ -1,6 +1,7 @@
 {
   "name": "servidor",
   "version": "1.0.0",
+  "type": "module",
   "description": "Servidor del proyecto de Programación Web",
   "main": "index.js",
   "scripts": {

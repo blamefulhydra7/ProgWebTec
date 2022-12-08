@@ -28,6 +28,7 @@
         </table>
         <section>
             <article class="d-flex justify-content-end">
+                <button class="btn btn-outline-primary me-3" @click.prevent="entradaArticulo()">Compra</button>
                 <button class="btn btn-outline-primary" @click.prevent="nuevoArticulo()">Nuevo</button>
             </article>
         </section>
@@ -89,6 +90,9 @@ export default {
         },
         nuevoArticulo: function () {
             this.$router.push({ name: 'articulosNuevo' });
+        },
+        entradaArticulo: function () {
+            this.$router.push({ name: 'articulosCompra' });
         },
     },
 }

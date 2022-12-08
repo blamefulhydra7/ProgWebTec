@@ -12,10 +12,6 @@
                     <label for="precio" class="form-label">Precio:</label>
                     <input type="number" class="form-control" id="precio" v-model="articulo.precio" required>
                 </div>
-                <div class="mb-3">
-                    <label for="cantidad" class="form-label">Cantidad:</label>
-                    <input type="number" class="form-control" id="cantidad" v-model="articulo.cantidad" required>
-                </div>
                 <select class="form-select mb-3" aria-label="Proveedores" v-model="articulo.proveedorid">
                     <option selected value="0">Selecciona un proveedor</option>
                     <option v-for="proveedor in proveedores" :value="proveedor.id" :key="proveedor.id">
@@ -48,7 +44,7 @@ export default {
     methods: {
         guardar: async function () {
             try {
-                await axios.post(URL_API + '/articulos', { ...this.articulo });
+                await axios.post(URL_API + '/articulos', this.articulo);
                 Swal.fire('Nuevo artículo', '¡Artículo guardado con éxito!', 'success');
                 this.articulo = {};
                 this.getProveedores();

@@ -5,7 +5,7 @@ import Articulos from '../views/Articulos.vue';
 import Proveedor from '../views/Proveedor.vue';
 import Cliente from '../views/Clientes.vue';
 import Venta from '../views/Ventas.vue';
-import { ArticulosDetalle, ArticulosNuevo, ArticulosEditar } from '../components/Articulos';
+import { ArticulosDetalle, ArticulosNuevo, ArticulosEditar, ArticulosCompra } from '../components/Articulos';
 import { ProveedorDetalle, ProveedorEditar, ProveedorNuevo } from '../components/Proveedores';
 import { ClienteDetalle, ClienteEditar, ClienteNuevo } from '../components/Clientes';
 import { VentaDetalle, VentaNuevo } from '../components/Ventas';
@@ -39,6 +39,11 @@ const routes = [
     path: '/articulos/nuevo',
     name: 'articulosNuevo',
     component: ArticulosNuevo,
+  },
+  {
+    path: '/articulos/compra',
+    name: 'articulosCompra',
+    component: ArticulosCompra,
   },
   {
     path: '/proveedores',

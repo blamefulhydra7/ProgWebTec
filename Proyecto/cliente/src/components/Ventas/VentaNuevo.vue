@@ -62,7 +62,7 @@ export default {
                 Swal.fire('Nueva venta', '¡Venta guardada con éxito!', 'success');
                 this.venta = {};
             } catch (error) {
-                Swal.fire('Error', 'No pude guardarla UnU', 'error');
+                Swal.fire('Error', error.response.status === 400 ? error.response.data : 'No pude guardarla UnU', 'error');
                 console.log(error);
             }
         },

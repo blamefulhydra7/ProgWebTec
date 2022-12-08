@@ -1,22 +1,21 @@
-const app = require('express');
-const conexion = require('../conexion');
-const router = app();
+import conexion from '../conexion.js';
 
 /**
  * Artículos
  */
-router.get('/api/articulos', function (req, res) {
-    conexion.query('SELECT * FROM Articulos', [], function (error, results) {
+
+export const getArticulos = (req, res) => {
+    conexion.query('SELECT * FROM Articulos', [], (error, results) => {
         if (error) {
-            res.status(501).send(error);
+            return res.status(501).send(error);
         }
         else {
             res.status(200).send(results);
         }
     });
-});
+}
 
-router.get('/api/articulos/:id', (req, res) => {
+export const getArticulo = (req, res) => {
     const { id } = req.params;
 
     conexion.query('SELECT a.*, p.nombre as "nombreProveedor" FROM Articulos as a ' +
@@ -25,14 +24,14 @@ router.get('/api/articulos/:id', (req, res) => {
                 res.status(501).send(error);
             else
                 res.status(200).send(results[0]);
-        })
-})
+        });
+}
 
-router.post('/api/articulos', function (req, res) {
+export const createArticulo = (req, res) => {
     const data = {
         descripcion: req.body.descripcion,
         precio: req.body.precio,
-        cantidad: req.body.cantidad,
+        cantidad: 0,
         proveedorid: req.body.proveedorid,
     };
 
@@ -46,9 +45,9 @@ router.post('/api/articulos', function (req, res) {
             res.status(200).send(results);
         }
     });
-});
+}
 
-router.put('/api/articulos/:id', function (req, res) {
+export const updateArticulo = (req, res) => {
     const { id } = req.params;
     const { descripcion, precio, cantidad } = req.body;
     const sql = 'UPDATE Articulos SET descripcion = ?, precio = ?, cantidad = ? WHERE id = ?';
@@ -61,9 +60,27 @@ router.put('/api/articulos/:id', function (req, res) {
             res.status(200).send(results);
         }
     });
-});
+}
 
-router.delete('/api/articulos/:id', function (req, res) {
+export const compraArticulo = (req, res) => {
+    const { id } = req.params;
+    const { cantidad } = req.body;
+
+    return conexion.query('SELECT cantidad FROM articulos WHERE id = ?', [id], function (error, results) {
+        if (!error) {
+            conexion.query('UPDATE articulos SET cantidad = ? WHERE id = ?', [parseInt(results[0].cantidad) + parseInt(cantidad), id], function (error, result) {
+                if (!error) {
+                    return res.sendStatus(200);
+                }
+                return res.sendStatus(501);
+            });
+        }
+        else
+            return res.sendStatus(501);
+    });
+}
+
+export const deleteArticulo = (req, res) => {
     const { id } = req.params;
 
     conexion.query('DELETE FROM Articulos WHERE id = ?', [id], function (error, results) {
@@ -74,6 +91,4 @@ router.delete('/api/articulos/:id', function (req, res) {
             res.status(200).send(results);
         }
     });
-});
-
-module.exports = router;
+}

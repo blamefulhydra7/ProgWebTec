@@ -1,13 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const conexion = require('./conexion');
-const Articulos = require('./controladores/Articulos');
-const Proveedores = require('./controladores/Proveedores');
-const Clientes = require('./controladores/Clientes');
-const Ventas = require('./controladores/Ventas');
+import express from 'express';
+import cors from 'cors';
+import conexion from './conexion.js';
+import { Articulos, Clientes, Proveedores, Ventas } from './routes/index.js';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const puerto = 3000;
 
@@ -19,10 +17,10 @@ conexion.connect((error) => {
     if (error)
         console.log('Conexión a DB fallida');
     else
-        console.log('Conectado a la BD');
+        console.log('Conectado a la DB');
 });
 
-app.use(Articulos);
-app.use(Proveedores);
-app.use(Clientes);
-app.use(Ventas);
+app.use('/api/articulos', Articulos);
+app.use('/api/proveedores', Proveedores);
+app.use('/api/clientes', Clientes);
+app.use('/api/ventas', Ventas);
